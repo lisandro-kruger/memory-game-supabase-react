@@ -1,0 +1,205 @@
+$primary-color: #b9dbfe;
+$secondary-color: #7fbfff;
+$shadow-color: #2893ff;
+$warning-color: tomato;
+$scrollbar-color: #7fbfff;
+$scrollbar-track-color: #b9dbfe;
+$error-color: #2893ff;
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+
+  &:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  &.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+}
+
+.Card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.App {
+  max-width: 800px;
+  background-color: $primary-color;
+  border-radius: 10px;
+  padding: 25px;
+
+  .App-H1 {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 20px 0;
+    background-color: $secondary-color;
+    text-shadow: 3px 3px 2px $shadow-color;
+    border-radius: 5px;
+  }
+
+  .App-Ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+
+    .App-Ul-Li {
+      border: solid 1px gray;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #fff;
+
+      .App-Ul-Li-Img {
+        width: 80px;
+      }
+    }
+  }
+
+  .Button {
+    margin: 0 5px;
+  }
+
+  .Input {
+    outline: none;
+    font-size: inherit;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    width: 160px;
+
+    &.Warning {
+      border: 2px solid $warning-color;
+    }
+  }
+}
+
+.Li-Content {
+  .Content {
+    position: relative;
+    width: 105px;
+    height: 105px;
+
+    .Front,
+    .Back {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      place-content: center;
+      backface-visibility: hidden;
+      transition: 0.4s;
+    }
+
+    .Front {
+      transform: perspective(200px) rotateY(0deg);
+    }
+
+    .Back {
+      transform: perspective(200px) rotateY(180deg);
+    }
+
+    .Flip-Front {
+      transform: perspective(200px) rotateY(180deg);
+    }
+
+    .Flip-Back {
+      transform: perspective(200px) rotateY(0deg);
+    }
+  }
+}
+
+.Timer {
+  margin: 20px 0;
+
+  .Timer-H3 {
+    font-size: 30px;
+
+    .Timer-H3-Span {
+      padding-right: 7px;
+      font-size: 40px;
+    }
+  }
+}
+
+.Cards {
+  margin-top: 20px;
+
+  .Cards-H2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.Ranking {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid $secondary-color;
+  padding: 5px 20px;
+  border-radius: 5px;
+  max-height: 185px;
+  overflow: auto;
+
+  .Ranking-Item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $secondary-color;
+    }
+
+    .Ranking-Span {
+      font-weight: 500;
+    }
+  }
+}
+
+.Error {
+  position: absolute;
+  top: 35px;
+  color: $error-color;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+
+  &-track {
+    background: $scrollbar-track-color;
+    border-radius: 5px;
+  }
+
+  &-thumb {
+    background: $scrollbar-color;
+  }
+}

@@ -1,0 +1,175 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.6666666667));
+}
+
+.Card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.App {
+  max-width: 800px;
+  background-color: #b9dbfe;
+  border-radius: 10px;
+  padding: 25px;
+}
+.App .App-H1 {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px 0;
+  background-color: #7fbfff;
+  text-shadow: 3px 3px 2px #2893ff;
+  border-radius: 5px;
+}
+.App .App-Ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+.App .App-Ul .App-Ul-Li {
+  border: solid 1px gray;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+.App .App-Ul .App-Ul-Li .App-Ul-Li-Img {
+  width: 80px;
+}
+.App .Button {
+  margin: 0 5px;
+}
+.App .Input {
+  outline: none;
+  font-size: inherit;
+  padding: 7px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  width: 160px;
+}
+.App .Input.Warning {
+  border: 2px solid tomato;
+}
+
+.Li-Content .Content {
+  position: relative;
+  width: 105px;
+  height: 105px;
+}
+.Li-Content .Content .Front,
+.Li-Content .Content .Back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  backface-visibility: hidden;
+  transition: 0.4s;
+}
+.Li-Content .Content .Front {
+  transform: perspective(200px) rotateY(0deg);
+}
+.Li-Content .Content .Back {
+  transform: perspective(200px) rotateY(180deg);
+}
+.Li-Content .Content .Flip-Front {
+  transform: perspective(200px) rotateY(180deg);
+}
+.Li-Content .Content .Flip-Back {
+  transform: perspective(200px) rotateY(0deg);
+}
+
+.Timer {
+  margin: 20px 0;
+}
+.Timer .Timer-H3 {
+  font-size: 30px;
+}
+.Timer .Timer-H3 .Timer-H3-Span {
+  padding-right: 7px;
+  font-size: 40px;
+}
+
+.Cards {
+  margin-top: 20px;
+}
+.Cards .Cards-H2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.Ranking {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid #7fbfff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  max-height: 185px;
+  overflow: auto;
+}
+.Ranking .Ranking-Item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 0;
+}
+.Ranking .Ranking-Item:not(:last-child) {
+  border-bottom: 1px solid #7fbfff;
+}
+.Ranking .Ranking-Item .Ranking-Span {
+  font-weight: 500;
+}
+
+.Error {
+  position: absolute;
+  top: 35px;
+  color: #2893ff;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #b9dbfe;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #7fbfff;
+}
+
+/*# sourceMappingURL=App.css.map */
