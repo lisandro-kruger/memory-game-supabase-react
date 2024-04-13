@@ -1,26 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Typography,
   Box,
-  List,
-  ListItem,
-  Card,
-  CardMedia,
+  CardMedia
 } from "@material-ui/core";
 import { getImages } from "../helpers/getImages";
 
 import confetti from "canvas-confetti";
 
-let size = 3;
-let clicks = 0;
+let SIZE = 3;
+let CLICKS = 0;
 const Cards = ({ start, score }) => {
-  const [images, setImages] = useState(getImages(size));
+  const [images, setImages] = useState(getImages(SIZE));
   const [selected, setSelected] = useState([]);
   const [opened, setOpened] = useState([]);
 
   const handleClick = (item) => {
     if (start) {
-      clicks = clicks + 1;
+      CLICKS = CLICKS + 1;
       if (selected.length < 2) {
         setSelected((selected) => selected.concat(item));
       }
@@ -39,9 +36,9 @@ const Cards = ({ start, score }) => {
   useEffect(() => {
     if (opened.length === images.length) {
       calculateScore();
-      size = size + 2;
+      SIZE = SIZE + 2;
       clearArrays();
-      setImages(getImages(size));
+      setImages(getImages(SIZE));
 
       confetti({
         particleCount: 200,
@@ -59,19 +56,19 @@ const Cards = ({ start, score }) => {
   };
 
   const calculateScore = () => {
-    const passLevel = size * 10;
+    const passLevel = SIZE * 10;
     let total = score.current;
-    const cards = size * 2;
-    if (clicks === cards) {
+    const cards = SIZE * 2;
+    if (CLICKS === cards) {
       total = total + cards * 2 + passLevel;
-    } else if (clicks > cards && clicks < cards + 5) {
+    } else if (CLICKS > cards && CLICKS < cards + 5) {
       total = total + cards + passLevel;
-    } else if (clicks > cards + 5 && clicks < cards + 10) {
+    } else if (CLICKS > cards + 5 && CLICKS < cards + 10) {
       total = total + cards / 2 + passLevel;
     } else {
       total = total + Math.round(cards / 3) + passLevel;
     }
-    clicks = 0;
+    CLICKS = 0;
     score.current = total;
   };
 
