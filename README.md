@@ -1,6 +1,6 @@
 # Memory Game App
 
-Link: (memory-game-supabase-react-9su8.vercel.app)[https://memory-game-supabase-react-9su8.vercel.app/]
+Link: [memory-game-supabase-react-9su8.vercel.app](https://memory-game-supabase-react-9su8.vercel.app/)
 
 ## Descripción
 
