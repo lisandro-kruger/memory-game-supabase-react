@@ -1,4 +1,4 @@
-# Memory Game App
+# Proyecto Memory Game App
 
 Link: [memory-game-supabase-react.vercel.app](https://memory-game-supabase-react.vercel.app/)
 
